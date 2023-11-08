@@ -14,7 +14,7 @@ function Header(){
                         <div className="searcher">
                             <form action="" className="header-form">
                                 <select name="NA" id="e-s-s">
-                                    <option value="All" selected>All</option>
+                                    <option value="All">All</option>
                                     <option value="Games">Games</option>
                                 </select>
                                 <input type="text" placeholder="Search entire store..."></input>
@@ -28,9 +28,9 @@ function Header(){
 
                         <div className="currency">
                             <form action="#">
-                                <label for="currency">Currency: </label>
+                                <label htmlFor="currency">Currency: </label>
                                 <select name="currency" id="currency">
-                                    <option value="USD" selected>USD</option>
+                                    <option value="USD">USD</option>
                                     <option value="pound">£/GBP</option>
                                     <option value="Dirham">AED</option>
                                     <option value="Ksh">Ksh</option>

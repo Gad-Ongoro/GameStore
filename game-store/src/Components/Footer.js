@@ -3,33 +3,59 @@ import React from "react";
 function Footer(){
     return(
         <footer>
-            <div class="footer-logo">
-                <div class="logo">
+            <div className="footer-logo">
+                <div className="logo">
                     <p>G<img src="https://gado.w3spaces.com/Img/logo.png" alt="NA"></img>e<span id="store">Store</span></p>
                 </div>
             </div>
 
-            <div class="footer-content">
-                <div class="about">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde eligendi nostrum ipsum exercitationem repudiandae minus sit quos velit, sapiente cum a inventore corporis illo! Recusandae pariatur quod tenetur magni temporibus.
+            <div className="footer-content">
+                <div className="about">
+                    <h4>ABOUT</h4>
+                    Play Has No Limits
                 </div>
-                <div class="consoles">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas similique tempora beatae alias sapiente dolorem minima sequi, nobis natus numquam voluptatem nisi repellendus possimus odio exercitationem laborum, velit inventore.                    
+
+                <div className="consoles">
+                    <h4>CONSOLES</h4>
+                    <ul className="footer-consoles">
+                        <li>Pre Order</li>
+                        <li>PS4</li>
+                        <li>Xbox One</li>
+                        <li>New Releases</li>
+                        <li>Best Sellers</li>
+                        <li>Prepaid Cards</li>
+                        <li>Consoles & Accessories</li>
+                    </ul>
                 </div>
-                <div class="links">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nesciunt sed qui praesentium veniam ea? Odit magni qui odio tempora illum a ut, quisquam veniam dolore voluptate hic, eaque harum.                    
+
+                <div className="links">
+                    <h4>LINKS</h4>
+                    <ul className="footer-consoles">
+                        <li>Help</li>
+                        <li>FAQ's</li>
+                        <li>Contact</li>
+                        <li>Account</li>
+                        <li>Privacy Policy</li>
+                    </ul>
                 </div>
-                <div class="services">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, quisquam facilis laborum explicabo vero deleniti? Nobis quo esse odit dolorum nam, in dolore atque necessitatibus animi cumque, dicta et amet!                    
+                <div className="services">
+                    <h4>SERVICES</h4>
+                    <ul className="footer-consoles">
+                        <li>Console Repairs</li>
+                        <li>PC Repairs</li>
+                        <li>Dual Shock Repairs</li>
+                        <li>PC Repairs</li>
+                        <li>e-Gaming</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="rights-and-paymentOpts">
-                <div class="rights">
+            <div className="rights-and-paymentOpts">
+                <div className="rights">
                     <p>GameStore &copy; 2020 - Present | All Rights Reserved</p>
                 </div>
-                <div class="paymentOps">
-                    <img src="PaymentOpt.png" alt="NA"></img>
+                <div className="paymentOps">
+                    <img src={"https://gado.w3spaces.com/Img/PaymentOpt.png"} alt="NA"></img>
                 </div>
             </div>
         </footer>
