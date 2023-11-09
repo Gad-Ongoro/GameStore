@@ -48,98 +48,6 @@ div.cursor2{
     transition: all 0.03s;
 }
   
-/* main main */ 
-main{
-    width: 100%;
-}
-main div.active-div{
-    position: relative;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-}
-div.active-div .active-game-info{
-	width: 30%;
-	color: rgb(19, 0, 96);
-
-	position: absolute;
-	top: 10%;
-	left: 10%;
-}
-
-div.carousel{
-    width: 90%;
-    height: 35%;
-    backdrop-filter: blur(1px);
-    position: absolute;
-    bottom: 2%;
-    right: 0;
-  
-    overflow: hidden;
-}
-.left-carousel-btn{
-    width: 50px;
-  
-    position: absolute;
-    top: 50%;
-    left: -10px;
-    transform: translateY(-50%);
-    z-index: 100;
-  
-    cursor: pointer;
-}
-.right-carousel-btn{
-    width: 50px;
-    
-    position: absolute;
-    top: 40%;
-    right: 0;
-    transform: translateY(-50%);
-    transform: rotate(180deg);
-    
-    cursor: pointer;
-}
-div.slides-container{
-    width: 90%;
-    height: 100%;
-    margin: auto;
-    position: relative;
-    
-    display: flex;
-    gap: 20px;
-    transition: all 1s;
-}
-div.slide{
-	min-width: 200px;
-	transition: all 0.5s;
-	overflow: hidden;  
-	display: inline-block;
-}
-div.slide:hover{
-    transform: scale(1.05);
-}
-div.slide img{
-    height: 100%;
-    object-fit: cover;
-}
-div.active-div .active-game-info p{
-    background: linear-gradient(to top left, rgb(0, 145, 255, 0.3), rgb(255, 105, 180, 0.3));
-    backdrop-filter: blur(10px);
-}
-main div.active-div img#display-img{
-	width: 100%;
-	height: 100%;
-    opacity: 1;
-  
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
-  
-    object-fit: cover;
-    object-position: 50% 0%;
-}
-  
 footer{
     display: flex;
     flex-direction: column;
@@ -161,8 +69,11 @@ footer div.footer-content{
     grid-template-columns: auto auto auto auto;
     gap: 5%;
 }
+footer div.footer-content div:hover h4{
+    color: aqua;
+}
 footer h4{
-	color: rgba(0, 255, 255, 0.8);
+	color: rgba(0, 255, 255, 0.75);
     margin-bottom: 0;
 }
 .footer-consoles{

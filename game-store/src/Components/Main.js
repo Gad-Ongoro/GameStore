@@ -1,4 +1,5 @@
 import React, {useRef, useEffect, useState} from "react";
+import "./Main.css";
 
 function Main(){    
     const [games, setGames] = useState([]);
@@ -62,9 +63,17 @@ function Main(){
                 <div className="active-game-info">
                     <img src="https://gado.w3spaces.com/Img/SpiderMan2.png" alt="NA"></img>
                     <div className="game-options">
-                        {/* <div className="buy-game">Buy Game</div>
-                        <div className="trailer">See Trailer</div>
-                        <div className="add-fav">Favourite</div> */}
+                        <div className="buy-game">
+                            <img src={`https://cdn-icons-png.flaticon.com/128/12299/12299265.png`}></img>
+                            <p>BUY GAME</p>
+                        </div>
+                        <div className="trailer">
+                            <img src={`https://cdn-icons-png.flaticon.com/128/3642/3642032.png`}></img>
+                            <p>SEE TRAILER</p>
+                        </div>
+                        <div className="add-fav">
+                            <img src={`https://cdn-icons-png.flaticon.com/128/10452/10452972.png`}></img>
+                        </div>
                     </div>
                 </div>
     
