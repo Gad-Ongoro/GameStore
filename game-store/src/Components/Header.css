@@ -1,0 +1,187 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    width: 100%;
+    color: white;
+    background-color: rgb(10, 10, 65);
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 0.5px solid rgba(255, 105, 180, 0.4);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-wrapper1{
+    width: 40%;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-wrapper2{
+    width: 35%;
+    margin-right: 2%;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.header-wrapper2 .currency select{
+    height: 20px;
+    text-align: center;
+    color: rgb(250, 0, 70);
+    background-color: inherit;
+  
+    border-radius: 20%;
+}
+.logo p{
+    margin: 10px 0 0 50px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.logo img{
+    width: 60px;
+    height: 30px;
+    object-fit: cover;
+}
+.logo span#store{
+    color: rgb(250, 0, 70);
+}
+div.searcher form{
+    position: relative;
+}
+div.searcher select{
+    width: 45px;
+    height: 100%;
+    text-align: center;
+    color: rgba(255, 2, 103, 0.922);
+    background-color: rgba(10, 10, 15, 0);
+    border: 1px solid white;
+    border-radius: 7px 0 0 7px;
+    position: absolute;
+    right: 100%;
+}
+div.searcher select:focus{
+    outline: none;
+}
+div.searcher input[type="text"]{
+    font-size: 14px;
+    height: 30px;
+    margin-right: 0;
+    border: 1px solid white;
+}
+div.searcher input[type="text"]:focus{
+    outline: 1px solid rgb(250, 0, 70);
+}
+div.searcher #s-s-btn{
+    position: absolute;
+    color: white;
+    height: 30px;
+    width: 70px;
+    margin-left: 0;
+    background-color: rgb(250, 0, 70);
+    border: none;
+    border-radius: 0 7px 7px 0;
+    cursor: pointer;
+}
+div.header-top-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.account{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.account img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  
+    object-fit: cover;
+    object-position: center;
+}
+.account h4{
+    padding: 0;
+    margin: 0;
+}
+div.account .user-account{
+    margin:10%;
+    position: relative;
+}
+.user-account-options{
+    background-color: rgb(100, 10, 250);
+    border-radius: 5px;
+
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    transform: translate(-50%);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+.user-account-options::after{
+    content: "";
+
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgb(100, 10, 250) transparent;
+}
+.user-account:hover .user-account-options{
+    visibility: visible;
+    opacity: 1;
+}
+.user-account-options-ul{
+    width: 80px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.user-account-options-ul li{
+    margin: 0 1px 2px 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.user-account-options-ul li:hover{
+    background-color: rgb(250, 0, 70, 0.6);
+    transform: scale(1.05);
+}
+div.cart img{
+    width: 30px;
+}
+div.header-bottom-wrapper1{
+    width: auto;
+    border-top: 0.5px solid rgba(255, 105, 180, 0.3);
+}
+div.header-bottom-wrapper{
+    width: 85%;
+    margin: 10px auto;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.header-bottom-wrapper p{
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+}
+
+/* Selector Finder */
+/* user-account-options-ul */
