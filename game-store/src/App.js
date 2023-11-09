@@ -6,10 +6,14 @@ import './App.css';
 
 
 function App() {
+	//prevent Default on form submit
+	function handleSubmit(e){
+        e.preventDefault();
+    }
   	return (
     	<div className="App">
-			<Header></Header>
-			<Main></Main>
+			<Header handleSubmit={handleSubmit}></Header>
+			<Main handleSubmit={handleSubmit}></Main>
 			<Footer></Footer>
     	</div>
   	);

@@ -77,11 +77,11 @@ div.add-fav{
     animation-iteration-count: infinite;
 }
 @keyframes favourite {
-    0%{transform: scale(1.25);}
+    0%{transform: scale(1.2);}
     20%{transform: scale(1);}
-    40%{transform: scale(1.25);}
+    40%{transform: scale(1.2);}
     80%{transform: scale(1);}
-    100%{transform: scale(1.25);}
+    100%{transform: scale(1.2);}
 }
 .game-options img{
     width: 30px;
@@ -95,20 +95,19 @@ div.active-div .active-game-info p{
 div.carousel{
     width: 90%;
     height: 35%;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(2px);
     position: absolute;
-    bottom: 2%;
-    right: 0;
-  
-    overflow: hidden;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;  
 }
 .left-carousel-btn{
     width: 50px;
   
     position: absolute;
-    top: 50%;
-    left: -10px;
-    transform: translateY(-50%);
+    bottom: 100%;
+    left: 0;
     z-index: 100;
   
     cursor: pointer;
@@ -117,10 +116,10 @@ div.carousel{
     width: 50px;
     
     position: absolute;
-    top: 40%;
+    bottom: 100%;
     right: 0;
-    transform: translateY(-50%);
     transform: rotate(180deg);
+    z-index: 100;
     
     cursor: pointer;
 }
@@ -136,6 +135,7 @@ div.slides-container{
 }
 div.slide{
 	min-width: 200px;
+    border-radius: 15px;
 	transition: all 0.5s;
 	overflow: hidden;  
 	display: inline-block;
@@ -163,4 +163,4 @@ main div.active-div img#display-img{
 }
 
 /* Selector Finder */
-/* game-options */
+/* slide */

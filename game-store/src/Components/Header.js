@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 
-function Header(){
+function Header({handleSubmit}){
     return(
         <>
             <header>
@@ -13,7 +13,7 @@ function Header(){
                         </div>
 
                         <div className="searcher">
-                            <form action="" className="header-form">
+                            <form className="header-form" onSubmit={handleSubmit}>
                                 <select name="NA" id="e-s-s">
                                     <option value="All">All</option>
                                     <option value="Games">Games</option>
