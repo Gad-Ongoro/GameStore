@@ -57,6 +57,15 @@ div.trailer{
     cursor: pointer;
     transition: all 0.4s;
 }
+div.trailer a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: 10% 80%;
+    justify-content: space-around;
+    align-items: center;
+}
 div.trailer:hover{
     transform: scale(1.05);
     box-shadow: 0 -1px 0 0 rgb(250, 0, 70) inset;
@@ -143,12 +152,32 @@ div.slide{
 div.slide:hover{
     transform: scale(1.05);
 }
+.game-card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+}
+.game-card-info p{
+    width: 75%;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(222, 222, 255);
+    backdrop-filter: blur(10px);
+}
+div.slide:hover .game-card-info{
+    transform: translateY(-150%);
+}
 div.slide img{
     height: 100%;
     object-fit: cover;
 }
 
-main div.active-div img#display-img{
+main div.active-div img.display-img{
 	width: 100%;
 	height: 100%;
     opacity: 1;
@@ -163,4 +192,4 @@ main div.active-div img#display-img{
 }
 
 /* Selector Finder */
-/* slide */
+/* display-img */

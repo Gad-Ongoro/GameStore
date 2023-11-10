@@ -177,11 +177,11 @@ div.header-bottom-wrapper{
     justify-content: space-between;
     align-items: center;
 }
-div.header-bottom-wrapper p{
-    padding: 0;
-    margin: 0;
+.header-bottom-wrapper .header-nav{
+    text-decoration: none;
+    color: white;
     font-size: 13px;
 }
 
 /* Selector Finder */
-/* logo */
+/* header-bottom-wrapper1 */

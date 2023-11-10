@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import "./Header.css";
+import Nav from "./Navs";
 
 function Header({handleSubmit}){
+    const poster = useRef();
+
+    //Events
+    function handlePoster(e){
+        console.log(poster.current);
+    };
+
     return(
         <>
             <header>
@@ -46,7 +54,7 @@ function Header({handleSubmit}){
                                     <div className="user-account-options">
                                         <ul className="user-account-options-ul">
                                             <li>Settings</li>
-                                            <li>Post</li>
+                                            <li ref={poster} onClick={handlePoster}>Post</li>
                                             <li>Sign Out</li>
                                         </ul>
                                     </div>
@@ -58,19 +66,7 @@ function Header({handleSubmit}){
                         </div>
                     </div>
                 </div>
-
-                <div className="header-bottom-wrapper1">
-                    <div className="header-bottom-wrapper">
-                        <p>DIGITAL DOWNLOAD</p>
-                        <p>PRE ORDERS</p>
-                        <p>NEW RELEASES</p>
-                        <p>PS</p>
-                        <p>XBOX</p>
-                        <p>NINTENDO</p>
-                        <p>CONSOLES & ACCESSORIES</p>
-                        <p>COINS</p>
-                    </div>
-                </div>
+                <Nav></Nav>
 
             </header>
         </>
