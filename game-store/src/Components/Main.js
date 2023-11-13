@@ -6,11 +6,13 @@ import PS from "./PS";
 import CandA from "./CandA";
 import Nav from "./Navs";
 
-function Main(){    
+function Main({cart, setCart}){    
     const [games, setGames] = useState([]);
     const [thumbNail, setThumbNail] = useState(`https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/3GEdKTGktTBsZ8Sj9yIWnr2f.jpg?w=940&thumb=false`);
     const [postFormData, setPostFormData] = useState({image:``, thumbnail:``});
     const [showForm, setShowForm] = useState(false)
+
+    let cartAdd = useRef();
 
     //GET games from API
     useEffect(()=>{
@@ -44,12 +46,17 @@ function Main(){
         console.log(postFormData);
     }
 
+    function cartAdder(e){
+        setCart((current) => ++current);
+        //console.log(e);
+    };
+
     //JSX
     return(
         <main>
             <div className="active-div">
                 <img src={thumbNail} className="display-img" alt="NA"></img>    
-                <div className="active-game-info">
+                <div className="active-game-info" onClick={cartAdder}>
                     {/* <img src="https://gado.w3spaces.com/Img/SpiderMan2.png" alt="NA"></img> */}
                     <div className="game-options">
                         <div className="buy-game">

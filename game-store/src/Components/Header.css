@@ -162,8 +162,28 @@ div.account .user-account{
     background-color: rgb(250, 0, 70, 0.6);
     transform: scale(1.05);
 }
+div.cart{
+    position: relative;
+}
 div.cart img{
     width: 30px;
+}
+.cart-number{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(250, 0, 70);
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: -20%;
+    left: 70%;
+    z-index: 10;
 }
 div.header-bottom-wrapper1{
     width: auto;
@@ -184,4 +204,4 @@ div.header-bottom-wrapper{
 }
 
 /* Selector Finder */
-/* header-bottom-wrapper1 */
+/* cart */

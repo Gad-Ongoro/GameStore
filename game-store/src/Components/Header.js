@@ -1,8 +1,8 @@
-import React, {useEffect, useRef} from "react";
+import React, { useRef } from "react";
 import "./Header.css";
 import Nav from "./Navs";
 
-function Header({handleSubmit}){
+function Header({handleSubmit, cart}){
     const poster = useRef();
 
     //Events
@@ -62,7 +62,8 @@ function Header({handleSubmit}){
                         </div>
 
                         <div className="cart">
-                            <img src="https://cdn-icons-png.flaticon.com/128/12299/12299265.png" alt="NA"></img>
+                            <img src="https://cdn-icons-png.flaticon.com/128/12299/12299265.png" alt="NA" className="cart-image"></img>
+                            <div className="cart-number">{cart}</div>
                         </div>
                     </div>
                 </div>
