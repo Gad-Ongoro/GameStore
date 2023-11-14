@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, createContext} from 'react';
 import Header from './Components/Header';
 import Main from './Components/Main';
 import Footer from './Components/Footer';
 import './App.css';
+export const gameStoreContext = createContext();
 
 function App() {
 	const [cart, setCart] = useState(0);
+	const [showForm, setShowForm] = useState(false);
 
 	//prevent Default on form submit
 	function handleSubmit(e){
@@ -13,9 +15,11 @@ function App() {
     }
   	return (
     	<div className="App">
-			<Header handleSubmit={handleSubmit} cart={cart}></Header>
-			<Main handleSubmit={handleSubmit} cart={cart} setCart={setCart}></Main>
-			<Footer></Footer>
+			<gameStoreContext.Provider value={{showForm, setShowForm}}>
+				<Header handleSubmit={handleSubmit} cart={cart}></Header>
+				<Main handleSubmit={handleSubmit} cart={cart} setCart={setCart}></Main>
+				<Footer></Footer>
+			</gameStoreContext.Provider>
     	</div>
   	);
 }

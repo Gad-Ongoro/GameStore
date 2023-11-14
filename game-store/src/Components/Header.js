@@ -1,13 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import "./Header.css";
 import Nav from "./Navs";
+import { gameStoreContext } from "../App";
 
 function Header({handleSubmit, cart}){
     const poster = useRef();
 
+    let {showForm, setShowForm} = useContext(gameStoreContext);
+
     //Events
     function handlePoster(e){
-        console.log(poster.current);
+        setShowForm(current => !current)
     };
 
     return(

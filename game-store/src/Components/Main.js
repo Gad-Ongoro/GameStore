@@ -1,16 +1,18 @@
-import React, {useRef, useEffect, useState} from "react";
+import React, {useRef, useEffect, useState, useContext} from "react";
 import { Routes, Route } from "react-router-dom";
 import "./Main.css";
 import Games from "./Games";
 import PS from "./PS";
 import CandA from "./CandA";
 import Nav from "./Navs";
+import { gameStoreContext } from "../App";
 
 function Main({cart, setCart}){    
     const [games, setGames] = useState([]);
     const [thumbNail, setThumbNail] = useState(`https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/3GEdKTGktTBsZ8Sj9yIWnr2f.jpg?w=940&thumb=false`);
     const [postFormData, setPostFormData] = useState({image:``, thumbnail:``});
-    const [showForm, setShowForm] = useState(false)
+
+    let {showForm, setShowForm} = useContext(gameStoreContext);
 
     let cartAdd = useRef();
 
@@ -51,6 +53,11 @@ function Main({cart, setCart}){
         //console.log(e);
     };
 
+    // Hide form on Submit
+    function handlePoster(e){
+        setShowForm(current => !current)
+    };
+
     //JSX
     return(
         <main>
@@ -82,15 +89,20 @@ function Main({cart, setCart}){
                     <Route path="/consolesandaccessories" exact element={<CandA games={games}></CandA>}></Route>
                 </Routes>
 
+                {showForm && 
                 <div className="post-lister-form">
                     <div className="form-div">
                         <form onSubmit={postHandler}>
                             <input type="text" placeholder="(POST)Image URL here..." name="image" onChange={postListerInputHandler} required></input>
+                            <br></br>
                             <input type="text" placeholder="ThumbNail URL here..." name="thumbnail" onChange={postListerInputHandler} required></input>
+                            <br></br>
                             <input type="submit"></input>
+                            <button type="button" onClick={handlePoster}>HIDE</button>
                         </form>
                     </div>
                 </div>
+                }
             </div>
         </main>
     );
