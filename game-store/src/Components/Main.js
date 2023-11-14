@@ -90,19 +90,22 @@ function Main({cart, setCart}){
                 </Routes>
 
                 {showForm && 
-                <div className="post-lister-form">
-                    <div className="form-div">
-                        <form onSubmit={postHandler}>
-                            <input type="text" placeholder="(POST)Image URL here..." name="image" onChange={postListerInputHandler} required></input>
-                            <br></br>
-                            <input type="text" placeholder="ThumbNail URL here..." name="thumbnail" onChange={postListerInputHandler} required></input>
-                            <br></br>
-                            <input type="submit"></input>
-                            <button type="button" onClick={handlePoster}>HIDE</button>
-                        </form>
+                    <div className="post-lister-form">
+                        <div className="form-div">
+                            <form onSubmit={postHandler}>
+                                <input type="text" placeholder="(POST)Image URL here..." name="image" onChange={postListerInputHandler} required></input>
+                                <br></br>
+                                <br></br>
+                                <input type="text" placeholder="ThumbNail URL here..." name="thumbnail" onChange={postListerInputHandler} required></input>
+                                <br></br>
+                                <br></br>
+                                <input type="submit"></input>
+                                <button type="button" onClick={handlePoster}>HIDE</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
                 }
+
             </div>
         </main>
     );

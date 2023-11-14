@@ -191,5 +191,12 @@ main div.active-div img.display-img{
     object-position: 50% 0%;
 }
 
+.post-lister-form{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Selector Finder */
 /* display-img */
