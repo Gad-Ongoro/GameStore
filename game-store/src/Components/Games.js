@@ -31,8 +31,10 @@ function Games({games}){
             }}>
                 <img src={game.image}></img>
                 <div className="game-card-info">
-                    <p>{game.name}</p>
-                    <p>{game.price}$</p>
+                    <p>
+                        <span>{game.name}</span>
+                        <span>{game.price}$</span>
+                    </p>
                 </div>
             </div>
         );

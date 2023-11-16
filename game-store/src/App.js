@@ -3,7 +3,7 @@ import Header from './Components/Header';
 import Main from './Components/Main';
 import Footer from './Components/Footer';
 import './App.css';
-export const gameStoreContext = createContext();
+export const gameStoreContext = React.createContext();
 
 function App() {
 	const [cart, setCart] = useState(0);
