@@ -221,7 +221,8 @@ div.header-bottom-wrapper{
 .header-nav:hover::after{
     width: 100%;
 }
-.header-bottom-wrapper .active-link{
+
+.header-bottom-wrapper .active{
     color: rgb(250, 0, 70);
     font-weight: bold;
 }
