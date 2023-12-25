@@ -201,6 +201,29 @@ div.header-bottom-wrapper{
     text-decoration: none;
     color: white;
     font-size: 13px;
+
+    position: relative;
+}
+.header-nav::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: rgb(250, 0, 70);
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    transition: all 0.5s;
+}
+
+.header-nav:hover::after{
+    width: 100%;
+}
+.header-bottom-wrapper .active-link{
+    color: rgb(250, 0, 70);
+    font-weight: bold;
 }
 
 /* Selector Finder */
