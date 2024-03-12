@@ -1,23 +1,30 @@
-import React, {useRef, useState} from "react";
+import React, { useState } from "react";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 function Games({games}){
     const [thumbNail, setThumbNail] = useState(`https://gmedia.playstation.com/is/image/SIEPDC/dualsense-deep-earth-collection-background-block-desktop-01-en-11sep23?$1600px$`);
-    
-    let carouselTrack = useRef();
-    let leftBtn = useRef();
-    let rightBtn = useRef();
-    // let currentSlide = useRef();
-
-    //Events
-    function slideLeft(e){
-        let carTrack = carouselTrack.current;
-        carTrack.style.cssText = `
-        transform: translateX(${-1100}px);`;
-    }
-    function slideRight(e){
-        let carTrack = carouselTrack.current;
-        carTrack.style.cssText = `
-        transform: translateX(${50}px);`;
+    const responsive = {
+		superLargeDesktop: {
+			breakpoint: { max: 4000, min: 3000 },
+			items: 5,
+			slidesToSlide: 2
+		  },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4,
+            slidesToSlide: 1
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            slidesToSlide: 1
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1
+        }
     };
 
     //create each game card
@@ -28,6 +35,7 @@ function Games({games}){
             className="slide"
             onClick={(e)=>{
                 setThumbNail(game.thumbnail);
+				console.log(game.thumbnail);
             }}>
                 <img src={game.image} alt="NA"></img>
                 <div className="game-card-info">
@@ -41,18 +49,28 @@ function Games({games}){
     })
     return(
         <>
-            <img src={thumbNail} className="display-img" alt="NA"></img>
-            <div className="carousel">
-                <img ref={leftBtn} src="https://cdn-icons-png.flaticon.com/128/3148/3148350.png" className="left-carousel-btn" onClick={slideRight} alt="LEFT"></img>
-                <div ref={carouselTrack} className="slides-container track">
-                    {/* <div ref={currentSlide} className="slide active-slide">
-                        <img src="https://media.gamestop.com/i/gamestop/20006017/Marvels-Spider-Man-2---PlayStation-5?$pdp2x$$&fmt=webp"></img>
-                    </div>*/}
-                    {gamesDiv}
-
-                </div>
-                <img ref={rightBtn} src="https://cdn-icons-png.flaticon.com/128/3148/3148350.png" className="right-carousel-btn" onClick={slideLeft} alt="RIGHT"></img>
-            </div>
+			<img src={thumbNail} className="display-img" alt="NA"></img>
+			<div className="carsel container text-center">
+				<div className="slides-container">
+					<Carousel
+						swipeable={false}
+						draggable={false}
+						showDots={true}
+						responsive={responsive}
+						ssr={true}
+						infinite={true}
+						autoPlaySpeed={1000}
+						keyBoardControl={true}
+						customTransition="all 1s"
+						transitionDuration={500}
+						containerClass="carousel-container"
+						dotListClass="custom-dot-list-style"
+						itemClass="carousel-item-padding-40-px"
+					>
+						{gamesDiv}
+					</Carousel>
+				</div>
+			</div>
         </>
     );
 };

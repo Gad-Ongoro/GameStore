@@ -53,11 +53,12 @@ function Header({handleSubmit, cart}){
                         <div className="account">
                                 <img src="https://i.pinimg.com/474x/00/11/10/0011107dd573cbf4d69defbc2dea0f28.jpg" alt="NA"></img>
                                 <div className="user-account">
-                                    <h4>Account</h4>
+                                    <h5 className="p-0 m-0">Account</h5>
                                     <div className="user-account-options">
                                         <ul className="user-account-options-ul">
                                             <li>Settings</li>
                                             <li ref={poster} onClick={handlePoster}>Post</li>
+                                            <li>Login</li>
                                             <li>Sign Out</li>
                                         </ul>
                                     </div>

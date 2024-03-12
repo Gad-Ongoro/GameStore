@@ -1,10 +1,10 @@
-import React, {useRef, useEffect, useState, useContext} from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./Main.css";
 import Games from "./Games";
 import PS from "./PS";
 import CandA from "./CandA";
-import Nav from "./Navs";
+// import Nav from "./Navs";
 import { gameStoreContext } from "../App";
 
 function Main({cart, setCart}){    
@@ -13,8 +13,6 @@ function Main({cart, setCart}){
     const [postFormData, setPostFormData] = useState({image:``, thumbnail:``});
 
     let {showForm, setShowForm} = useContext(gameStoreContext);
-
-    let cartAdd = useRef();
 
     //GET games from API
     useEffect(()=>{
@@ -67,26 +65,27 @@ function Main({cart, setCart}){
                     {/* <img src="https://gado.w3spaces.com/Img/SpiderMan2.png" alt="NA"></img> */}
                     <div className="game-options">
                         <div className="buy-game">
-                            <img src={`https://cdn-icons-png.flaticon.com/128/12299/12299265.png`}></img>
+                            <img src={`https://cdn-icons-png.flaticon.com/128/12299/12299265.png`} alt="NA"></img>
                             <p>BUY GAME</p>
                         </div>
                         <div className="trailer">
-                            <a href="https://www.youtube.com/" target="_blank">
-                                <img src={`https://cdn-icons-png.flaticon.com/128/3642/3642032.png`}></img>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+                                <img src={`https://cdn-icons-png.flaticon.com/128/3642/3642032.png`} alt="NA"></img>
                                 <p>SEE TRAILER</p>
                             </a>
                         </div>
                         <div className="add-fav">
-                            <img src={`https://cdn-icons-png.flaticon.com/128/10452/10452972.png`}></img>
+                            <img src={`https://cdn-icons-png.flaticon.com/128/10452/10452972.png`} alt="NA"></img>
                         </div>
                     </div>
                 </div>
 
                 <Routes>
                     <Route path="/" exact element={<Games games={games} ></Games>}></Route>
-                    <Route path="/games" exact element={<Games games={games} ></Games>}></Route>
+                    <Route path="/games" exact element={<Games games={games}></Games>}></Route>
                     <Route path="/ps" exact element={<PS games={games} ></PS>}></Route>
                     <Route path="/consolesandaccessories" exact element={<CandA games={games}></CandA>}></Route>
+                    <Route path='/services' exact element={<div></div>}></Route>
                 </Routes>
 
                 {showForm && 
