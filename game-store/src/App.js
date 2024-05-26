@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Header from './Components/Header';
+import { Routes, Route } from 'react-router-dom';
 import Main from './Components/Main';
 import Footer from './Components/Footer';
+import SignIn from './Components/SignIn';
 import './App.css';
 export const gameStoreContext = React.createContext();
 
@@ -16,9 +17,10 @@ function App() {
   	return (
     	<div className="App">
 			<gameStoreContext.Provider value={{showForm, setShowForm}}>
-				<Header handleSubmit={handleSubmit} cart={cart}></Header>
-				<Main handleSubmit={handleSubmit} cart={cart} setCart={setCart}></Main>
-				<Footer></Footer>
+				<Routes>
+					<Route path="/*" element={<Main handleSubmit={handleSubmit} cart={cart} setCart={setCart}></Main>}></Route>
+					<Route path="/signin" element={<SignIn></SignIn>}></Route>
+				</Routes>
 			</gameStoreContext.Provider>
     	</div>
   	);

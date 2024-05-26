@@ -1,6 +1,6 @@
 import React, { useRef, useContext } from "react";
 import "./Header.css";
-import Nav from "./Navs";
+import Navs from "./Navs";
 import { gameStoreContext } from "../App";
 
 function Header({handleSubmit, cart}){
@@ -71,11 +71,11 @@ function Header({handleSubmit, cart}){
                         </div>
                     </div>
                 </div>
-                <Nav></Nav>
+                <Navs></Navs>
 
             </header>
         </>
     )
 
 };
-export default Header;
+// export default Header;

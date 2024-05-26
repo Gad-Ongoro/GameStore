@@ -4,7 +4,7 @@ import "./Main.css";
 import Games from "./Games";
 import PS from "./PS";
 import CandA from "./CandA";
-// import Nav from "./Navs";
+import Header from "./header";
 import { gameStoreContext } from "../App";
 
 function Main({cart, setCart}){    
@@ -59,6 +59,7 @@ function Main({cart, setCart}){
     //JSX
     return(
         <main>
+            <Header />
             <div className="active-div">
                 <img src={thumbNail} className="display-img" alt="NA"></img>    
                 <div className="active-game-info" onClick={cartAdder}>
