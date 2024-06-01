@@ -29,15 +29,17 @@ import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/
 
 
 const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '/', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '/', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '/', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '/', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '/', icon: ArrowPathIcon },
+  { name: 'Games', description: 'Explore a wide selection of the latest and classic video games across all genres and platforms.', href: '/games', icon: ChartPieIcon },
+  { name: 'Play Stations', description: 'Discover the newest PlayStation consoles, games, and accessories for an immersive gaming experience.', href: '/ps', icon: CursorArrowRaysIcon },
+  { name: 'Xbox', description: 'Shop the latest Xbox consoles, games, and accessories to enhance your gaming adventures.', href: '/xbox', icon: FingerPrintIcon },
+  { name: 'Nintendo', description: 'Find the latest Nintendo consoles, games, and accessories for endless family-friendly fun.', href: '/nintendo', icon: SquaresPlusIcon },
+  { name: 'Consoles & Accessories', description: 'Get the best deals on gaming consoles and essential accessories for every gamer.', href: '/consolesandaccessories', icon: ArrowPathIcon },
+  { name: 'Coins & Gifts', description: 'Purchase in-game currency and exclusive gaming gifts for your favorite titles.', href: '/coins', icon: SquaresPlusIcon },
+  { name: 'Services', description: 'Access a range of gaming services, including repairs, upgrades, and customizations for your devices.', href: '/services', icon: SquaresPlusIcon },
 ]
 const callsToAction = [
-  { name: 'Watch demo', href: '/', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '/', icon: PhoneIcon },
+  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+  { name: 'Contact sales', href: '#', icon: PhoneIcon },
 ]
 
 function classNames(...classes) {
@@ -76,8 +78,8 @@ export default function Header() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
+            <PopoverButton className="flex outline-none items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+              Explore
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </PopoverButton>
 
@@ -90,21 +92,18 @@ export default function Header() {
               leaveTo="opacity-0 translate-y-1"
             >
               <PopoverPanel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
+                <div className="">
                   {products.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex items-center rounded-lg p-1 text-sm hover:bg-gray-50"
                     >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                         <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div className="flex-auto">
-                        <a href={item.href} className="block font-semibold text-gray-900">
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
+                        <NavLink to={item.href} className='block font-semibold text-gray-900'>{item.name}</NavLink>
+                        <p className="text-gray-600">{item.description}</p>
                       </div>
                     </div>
                   ))}
@@ -114,7 +113,7 @@ export default function Header() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                      className="flex items-center justify-center gap-x-2.5 p-1 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                     >
                       <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                       {item.name}
@@ -125,40 +124,10 @@ export default function Header() {
             </Transition>
           </Popover>
 
-          {/* <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
-            Features
-          </a>
-          <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
-          </a>
-          <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
-            GameStore
-          </a> */}
-
-          <div className="searcher">
-            <form className="header-form" 
-              // onSubmit={handleSubmit}
-            >
-              <select name="NA" id="e-s-s">
-                <option value="All">All</option>
-                <option value="Games">Games</option>
-              </select>
-              <input type="text" placeholder="Search entire store..."></input>
-              <input type="submit" value="Search" id="s-s-btn"></input>
-            </form>
-          </div>
-
-          <div className="ml-7">
-            <form action="#">
-              <label htmlFor="currency">Currency: </label>
-              <select name="currency" id="currency">
-                <option value="USD">USD</option>
-                <option value="pound">£/GBP</option>
-                <option value="Dirham">AED</option>
-                <option value="Ksh">Ksh</option>
-              </select>
-            </form>
-          </div>
+          <form class="d-flex">
+            <input class="form-control me-2 h-7" type="search" placeholder="Search" aria-label="Search"></input>
+            <button class="btn h-7 transition duration-500 outline outline-1 outline-sky-300 text-gray-900 hover:bg-sky-600 hover:text-white active:bg-sky-700 flex justify-center items-center" type="submit">Search</button>
+          </form>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <NavLink to={'/signin'} className="text-sm font-semibold leading-6 text-gray-900">
@@ -194,7 +163,7 @@ export default function Header() {
                   {({ open }) => (
                     <>
                       <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                        Product
+                        Products
                         <ChevronDownIcon
                           className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
                           aria-hidden="true"
@@ -216,19 +185,19 @@ export default function Header() {
                   )}
                 </Disclosure>
                 <a
-                  href="#"
+                  href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Features
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Marketplace
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Company

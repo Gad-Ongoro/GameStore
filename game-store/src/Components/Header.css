@@ -38,43 +38,6 @@ header{
 .logo span#store{
     color: rgb(250, 0, 70);
 }
-div.searcher form{
-    position: relative;
-}
-div.searcher select{
-    width: 45px;
-    height: 100%;
-    text-align: center;
-    color: rgba(255, 2, 103, 0.922);
-    background-color: rgba(10, 10, 15, 0);
-    border: 1px solid white;
-    border-radius: 7px 0 0 7px;
-    position: absolute;
-    right: 100%;
-}
-div.searcher select:focus{
-    outline: none;
-}
-div.searcher input[type="text"]{
-    font-size: 14px;
-    height: 30px;
-    margin-right: 0;
-    border: 1px solid white;
-}
-div.searcher input[type="text"]:focus{
-    outline: 1px solid rgb(250, 0, 70);
-}
-div.searcher #s-s-btn{
-    position: absolute;
-    color: white;
-    height: 30px;
-    width: 70px;
-    margin-left: 0;
-    background-color: rgb(250, 0, 70);
-    border: none;
-    border-radius: 0 7px 7px 0;
-    cursor: pointer;
-}
 div.header-top-wrapper{
     display: flex;
     justify-content: space-between;

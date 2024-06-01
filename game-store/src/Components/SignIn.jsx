@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 export default function SignIn() {
 	const navigate = useNavigate();
@@ -16,10 +16,12 @@ export default function SignIn() {
 			<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 				<div className="sm:mx-auto sm:w-full sm:max-w-sm">
 					<div>
-            <p className="flex text-center justify-center items-center">
-							<img src="https://gado.w3spaces.com/Img/logo.png" className="w-14 h-10 object-cover p-0 m-0" alt="NA"></img>
+            			<p className="flex text-center justify-center items-center">
+							<NavLink to="/">
+								<img src="https://gado.w3spaces.com/Img/logo.png" className="w-14 h-10 object-cover p-0 m-0" alt="NA"></img>
+							</NavLink>
 						</p>
-          </div>
+          			</div>
 					<h2 className="mt-3 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
 						Sign in to your account
 					</h2>

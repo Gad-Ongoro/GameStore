@@ -13,30 +13,17 @@ main div.active-div{
     height: 600px;
 }
 div.active-div .active-game-info{
-	width: 35%;
 	color: rgb(19, 0, 96);
 
 	position: absolute;
 	top: 10%;
 	left: 2%;
 }
-div.game-options{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 35% 35% 10%;
-    justify-content: space-around;
-    gap: 20px;
-}
 div.buy-game{
     width: 100%;
     height: 50px;
     border-radius: 15px;
     background-color: rgb(19, 0, 96);
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
     cursor: pointer;
     transition: all 0.4s;
 }
@@ -60,10 +47,6 @@ div.trailer a{
     margin: 0;
     padding: 0;
     text-decoration: none;
-    display: grid;
-    grid-template-columns: 10% 80%;
-    justify-content: space-around;
-    align-items: center;
 }
 div.trailer:hover{
     transform: scale(1.05);
@@ -94,10 +77,6 @@ div.add-fav{
 .game-options img{
     width: 30px;
     height: 30px;
-}
-div.active-div .active-game-info p{
-    color: white;
-    backdrop-filter: blur(10px);
 }
 
 div.carsel{

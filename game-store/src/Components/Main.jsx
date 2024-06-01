@@ -4,8 +4,10 @@ import "./Main.css";
 import Games from "./Games";
 import PS from "./PS";
 import CandA from "./CandA";
-import Header from "./header";
+import Header from "./Header";
 import { gameStoreContext } from "../App";
+import { FaPlay } from "react-icons/fa";
+import { TiShoppingCart } from "react-icons/ti";
 
 function Main({cart, setCart}){    
     const [games, setGames] = useState([]);
@@ -64,15 +66,18 @@ function Main({cart, setCart}){
                 <img src={thumbNail} className="display-img" alt="NA"></img>    
                 <div className="active-game-info" onClick={cartAdder}>
                     {/* <img src="https://gado.w3spaces.com/Img/SpiderMan2.png" alt="NA"></img> */}
-                    <div className="game-options">
-                        <div className="buy-game">
-                            <img src={`https://cdn-icons-png.flaticon.com/128/12299/12299265.png`} alt="NA"></img>
-                            <p>BUY GAME</p>
+                    <div className="game-options m-2 grid gap-2 grid-cols-12">
+                        <div 
+                            className="buy-game col-span-5 flex justify-center items-center gap-2"
+                        >
+                            <TiShoppingCart className='text-pink-600 bg-transparent' size={25}/>
+                            <p className='text-white'>Buy Game</p>
                         </div>
-                        <div className="trailer">
-                            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
-                                <img src={`https://cdn-icons-png.flaticon.com/128/3642/3642032.png`} alt="NA"></img>
-                                <p>SEE TRAILER</p>
+                        <div className="trailer col-span-5">
+                            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" 
+                                className="flex justify-center items-center gap-2">
+                                <FaPlay className='text-pink-600 bg-transparent'/>
+                                <p className='text-white'>See Trailer</p>
                             </a>
                         </div>
                         <div className="add-fav">
