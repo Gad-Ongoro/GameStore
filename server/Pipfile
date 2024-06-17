@@ -8,6 +8,14 @@ django = "*"
 djangorestframework = "*"
 environs = "*"
 uuid = "*"
+asgiref = "*"
+django-cors-headers = "*"
+djangorestframework-simplejwt = "*"
+pyjwt = "*"
+pytz = "*"
+sqlparse = "*"
+psycopg2-binary = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
