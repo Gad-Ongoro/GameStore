@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
+import AnimatedXPage from "./AnimatedXPage";
 import "./Main.css";
 import Games from "./Games";
 import PS from "./PS";
 import CandA from "./CandA";
 import Header from "./Header";
+import Cart from "./Cart";
 import { gameStoreContext } from "../App";
 import { FaPlay } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
@@ -61,6 +63,7 @@ function Main({cart, setCart}){
     //JSX
     return(
         <main>
+            <AnimatedXPage>
             <Header />
             <div className="active-div">
                 <img src={thumbNail} className="display-img" alt="NA"></img>    
@@ -92,6 +95,7 @@ function Main({cart, setCart}){
                     <Route path="/ps" exact element={<PS games={games} ></PS>}></Route>
                     <Route path="/consolesandaccessories" exact element={<CandA games={games}></CandA>}></Route>
                     <Route path='/services' exact element={<div></div>}></Route>
+                    <Route path="/cart" exact element={<Cart></Cart>}></Route>
                 </Routes>
 
                 {showForm && 
@@ -111,6 +115,7 @@ function Main({cart, setCart}){
                 }
 
             </div>
+            </AnimatedXPage>
         </main>
     );
 }

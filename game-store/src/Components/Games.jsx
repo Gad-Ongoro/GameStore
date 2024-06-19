@@ -31,24 +31,25 @@ function Games({games}){
     let gamesDiv = games.map(game => {
         return(
             <div
-            key={game.id} 
-            className="slide"
-            onClick={(e)=>{
+            	key={game.id} 
+            	className="slide"
+            	onClick={(e)=>{
                 setThumbNail(game.thumbnail);
-				console.log(game.thumbnail);
-            }}>
-                <img src={game.image} alt="NA"></img>
-                <div className="game-card-info">
-                    <p>
-                        <span>{game.name}</span>
-                        <span>{game.price}$</span>
-                    </p>
-                </div>
+								console.log(game.thumbnail);
+            	}}
+						>
+              <img src={game.image} alt="NA"></img>
+              <div className="game-card-info">
+                  <p>
+										<span>{game.name}</span>
+										<span>{game.price}$</span>
+                  </p>
+              </div>
             </div>
         );
     })
-    return(
-        <>
+	return(
+		<>
 			<img src={thumbNail} className="display-img" alt="NA"></img>
 			<div className="carsel container text-center">
 				<div className="slides-container">
@@ -71,8 +72,8 @@ function Games({games}){
 					</Carousel>
 				</div>
 			</div>
-        </>
-    );
+		</>
+	);
 };
 
 export default Games;
