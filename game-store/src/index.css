@@ -51,16 +51,7 @@ div.cursor2{
     pointer-events: none;
     transition: all 0.03s;
 }
-  
-footer{
-    display: flex;
-    flex-direction: column;
-    
-    width: 100%;
-    background-color: rgba(10, 10, 50);
-    color: white;
-}
-  
+
 footer div.footer-logo{
     margin: auto;
 }
@@ -73,13 +64,7 @@ footer div.footer-content{
     grid-template-columns: auto auto auto auto;
     gap: 5%;
 }
-footer div.footer-content div:hover h4{
-    color: aqua;
-}
-footer h4{
-	color: rgba(0, 255, 255, 0.75);
-    margin-bottom: 0;
-}
+
 .footer-consoles{
 	list-style-type: none;
 	padding: 0;
@@ -91,16 +76,4 @@ footer h4{
 }
 .footer-consoles li:hover{
     color: rgba(230, 230, 255);
-}
-
-footer div.rights-and-paymentOpts{
-    width: 90%;
-    margin: auto;
-  
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-footer div.rights-and-paymentOpts img{
-    width: 150px;
 }

@@ -38,77 +38,7 @@ header{
 .logo span#store{
     color: rgb(250, 0, 70);
 }
-div.header-top-wrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-div.account{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-div.account img{
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-  
-    object-fit: cover;
-    object-position: center;
-}
-.account h4{
-    padding: 0;
-    margin: 0;
-}
-div.account .user-account{
-    margin:10%;
-    position: relative;
-}
-.user-account-options{
-    background-color: rgb(100, 10, 250);
-    border-radius: 5px;
 
-    position: absolute;
-    top: 140%;
-    left: 50%;
-    transform: translate(-50%);
-
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.6s;
-}
-.user-account-options::after{
-    content: "";
-
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent rgb(100, 10, 250) transparent;
-}
-.user-account:hover .user-account-options{
-    visibility: visible;
-    opacity: 1;
-}
-.user-account-options-ul{
-    width: 80px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.user-account-options-ul li{
-    margin: 0 1px 2px 1px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-.user-account-options-ul li:hover{
-    background-color: rgb(250, 0, 70, 0.6);
-    transform: scale(1.05);
-}
 div.cart{
     position: relative;
 }
@@ -171,6 +101,3 @@ div.header-bottom-wrapper{
     color: rgb(250, 0, 70);
     font-weight: bold;
 }
-
-/* Selector Finder */
-/* cart */

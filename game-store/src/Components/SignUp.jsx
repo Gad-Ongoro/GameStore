@@ -20,8 +20,8 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://game-store-seven-xi.vercel.app/">
+        GameStore
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -45,22 +45,22 @@ export default function SignUp() {
     event.preventDefault();
 		console.log(inputs);
 
-		fetch(`${api}/users/`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(inputs),
-		})
-		.then((response) => response.json())
-		.then((data) => {
-				console.log(data)
-        navigate('/login')
-
-		})
-		.catch((error) => {
-			console.error('Error:', error);
-		});
+    try{
+      api.post('api/users/register/', inputs)
+      .then(
+        response => {
+          if(response.status === 201){
+            navigate('/signin')
+          }
+          else{
+            alert('Something Went Wrong!')
+          }
+        }
+      )
+    }
+    catch(error){
+      console.log(error);
+    }
 	}
 
   return (

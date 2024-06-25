@@ -3,123 +3,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* main main */ 
-main{
-    width: 100%;
-}
+/* main */ 
 main div.active-div{
     position: relative;
     width: 100%;
-    height: 600px;
-}
-div.active-div .active-game-info{
-	color: rgb(19, 0, 96);
-
-	position: absolute;
-	top: 10%;
-	left: 2%;
-}
-div.buy-game{
-    width: 100%;
-    height: 50px;
-    border-radius: 15px;
-    background-color: rgb(19, 0, 96);
-    cursor: pointer;
-    transition: all 0.4s;
-}
-div.buy-game:hover{
-    transform: scale(1.05);
-    box-shadow: 0 -1px 0 0 rgb(250, 0, 70) inset;
-}
-div.trailer{
-    height: 50px;
-    border-radius: 15px;
-    background-color: rgb(19, 0, 96);
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    cursor: pointer;
-    transition: all 0.4s;
-}
-div.trailer a{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
-div.trailer:hover{
-    transform: scale(1.05);
-    box-shadow: 0 -1px 0 0 rgb(250, 0, 70) inset;
-}
-div.add-fav{
-    height: 50px;
-    border-radius: 15px;
-    background-color: transparent;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    cursor: pointer;
-
-    animation-name: favourite;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-}
-@keyframes favourite {
-    0%{transform: scale(1.2);}
-    20%{transform: scale(1);}
-    40%{transform: scale(1.2);}
-    80%{transform: scale(1);}
-    100%{transform: scale(1.2);}
-}
-.game-options img{
-    width: 30px;
-    height: 30px;
 }
 
-div.carsel{
-    /* width: 90%; */
-    height: 40%;
-    backdrop-filter: blur(2px);
-    position: absolute;
-    bottom: 7%;
-    left: 50%;
-    transform: translateX(-50%);
-    right: 0;  
-}
-.left-carousel-btn{
-    width: 50px;
-  
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    z-index: 100;
-  
-    cursor: pointer;
-}
-.right-carousel-btn{
-    width: 50px;
-    
-    position: absolute;
-    bottom: 100%;
-    right: 0;
-    transform: rotate(180deg);
-    z-index: 100;
-    
-    cursor: pointer;
-}
-
-div.slide{
-	min-width: 200px;
-    border-radius: 15px;
-	transition: all 0.5s;
-	display: inline-block;
-}
-div.slide:hover{
-    transform: scale(1.05);
-}
 .game-card-info{
     display: flex;
     flex-direction: column;
@@ -141,15 +30,6 @@ div.slide:hover{
     display: flex;
     flex-direction: column;
 }
-div.slide:hover .game-card-info{
-    transform: translateY(-60%);
-}
-div.slide img{
-    width: 200px;
-    height: 200px;
-    /* height: 100%; */
-    object-fit: cover;
-}
 
 main div.active-div img.display-img{
 	width: 100%;
@@ -164,37 +44,3 @@ main div.active-div img.display-img{
     object-fit: cover;
     object-position: 50% 0%;
 }
-
-.post-lister-form{
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.form-div form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.post-lister-form input[type="text"]{
-    width: 300px;
-    height: 30px;
-    padding: 0 0 0 10px;
-    border: none;
-    border-radius: 5px;
-}
-.post-lister-form input[type="text"]:focus{
-    outline: 2px double rgb(250, 0, 70);
-}
-.post-lister-form input[type="submit"], .post-lister-form button[type="button"]{
-    width: 100px;
-    height: 23px;
-    color: white;
-    background-color: rgb(47, 158, 255);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Selector Finder */
-/* form */
