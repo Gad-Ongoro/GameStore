@@ -1,12 +1,12 @@
 import { Fragment, useState, useEffect } from 'react';
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import api from '../api';
+import api from '../services/api';
 
 const products = [
   {
     id: 1,
-    name: 'Course 1',
+    name: 'Game 1',
     href: '#',
     color: 'Salmon',
     price: '$90.00',
@@ -16,7 +16,7 @@ const products = [
   },
   {
     id: 2,
-    name: 'Course 2',
+    name: 'Game 2',
     href: '#',
     color: 'Blue',
     price: '$32.00',

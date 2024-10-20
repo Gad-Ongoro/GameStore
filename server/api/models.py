@@ -1,25 +1,54 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, PermissionsMixin
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 import uuid
 
 # Create your models here.
-# Abstract User Model
-# class CustomUser(AbstractUser, PermissionsMixin): # PermissionsMixin for permissions (eg. is_staff)
-class CustomUser(AbstractUser):
-    # Custom fields
-    id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
-    email = models.EmailField(unique=True)
+# custom user model
+class UserManager(BaseUserManager):
+    def create_user(self, email, password, **extra_fields):
+        if not email:
+            raise ValueError('The Email field must be set')
+        if not password:
+            raise ValueError('The Password field must be set')
 
-    # Related_name to avoid clashes with built-in User model
-    groups = models.ManyToManyField('auth.Group', related_name='customuser_set', blank=True)
-    user_permissions = models.ManyToManyField('auth.Permission', related_name='customuser_set', blank=True)
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, password, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+
+        return self.create_user(email, password, **extra_fields)
+
+class User(AbstractUser):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    email = models.EmailField(unique=True)
+    username = None
+    is_google_user = models.BooleanField(default=False)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['first_name', 'last_name']
+
+    objects = UserManager()
 
     def __str__(self):
-        return self.username
-    
+        return self.email
+
+    class Meta:
+        verbose_name = 'user'
+        verbose_name_plural = 'users'
+ 
+    @property
+    def name(self):
+        return f'{self.first_name} {self.last_name}'
+
 class Profile(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     country = models.CharField(max_length=100, blank=True, null=True)
     date_of_birth = models.DateField(blank=True, null=True)
@@ -32,7 +61,7 @@ class Profile(models.Model):
 
 class ShippingAddress(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     recipient_name = models.CharField(max_length=255)
     recipient_phone_number = models.CharField(max_length=20)
     address_line_1 = models.CharField(max_length=255)
@@ -74,7 +103,7 @@ class ProductImage(models.Model):
 class Review(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     rating = models.IntegerField()
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -82,7 +111,7 @@ class Review(models.Model):
     
 class Cart(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     quantity = models.IntegerField()
@@ -94,7 +123,7 @@ class Cart(models.Model):
     
 class Order(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     status = models.CharField(max_length=20)

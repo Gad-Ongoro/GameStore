@@ -50,18 +50,18 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white">
+    <header className="bg-white z-10">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">GameStore</span>
             <div className="text-center">
               <p className="text-3xl font-bold flex text-center justify-center items-center"><span className='text-sky-600'>G</span>
-                <img 
-									src="https://gado.w3spaces.com/Img/logo.png"
-									className="w-14 h-10 object-cover p-0 m-0"
-									alt="NA">
-								</img><span className='text-sky-600'>e</span><span className="text-pink-600">Store</span>
+                <img
+                  src="/assets/gamestore_logo.png"
+                  className="w-14 h-10 object-cover p-0 m-0"
+                  alt="NA">
+                </img><span className='text-sky-600'>e</span><span className="text-pink-600">Store</span>
               </p>
             </div>
           </a>
@@ -124,9 +124,9 @@ export default function Header() {
             </Transition>
           </Popover>
 
-          <form class="d-flex">
-            <input class="form-control me-2 h-7" type="search" placeholder="Search" aria-label="Search"></input>
-            <button class="btn h-7 transition duration-500 outline outline-1 outline-sky-300 text-gray-900 hover:bg-sky-600 hover:text-white active:bg-sky-700 flex justify-center items-center" type="submit">Search</button>
+          <form className="d-flex">
+            <input className="form-control me-2 h-7" type="search" placeholder="Search" aria-label="Search"></input>
+            <button className="btn h-7 transition duration-500 outline outline-1 outline-sky-300 text-gray-900 hover:bg-sky-600 hover:text-white active:bg-sky-700 flex justify-center items-center" type="submit">Search</button>
           </form>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -143,9 +143,9 @@ export default function Header() {
               <span className="sr-only">GameStore</span>
               <div>
                 <p className="flex text-center justify-center items-center">
-                  <img src="https://gado.w3spaces.com/Img/logo.png" className="w-14 h-10 object-cover p-0 m-0" alt="NA"></img>
+                  <img src="/assets/gamestore_logo.png" className="w-14 h-10 object-cover p-0 m-0" alt="NA"></img>
                 </p>
-            </div>
+              </div>
             </a>
             <button
               type="button"
@@ -171,14 +171,13 @@ export default function Header() {
                       </DisclosureButton>
                       <DisclosurePanel className="mt-2 space-y-2">
                         {[...products, ...callsToAction].map((item) => (
-                          <DisclosureButton
+                          <NavLink
                             key={item.name}
-                            as="a"
-                            href={item.href}
+                            to={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
-                          </DisclosureButton>
+                          </NavLink>
                         ))}
                       </DisclosurePanel>
                     </>

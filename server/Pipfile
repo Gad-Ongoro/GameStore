@@ -17,6 +17,8 @@ sqlparse = "*"
 psycopg2-binary = "*"
 python-dotenv = "*"
 pillow = "*"
+whitenoise = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
